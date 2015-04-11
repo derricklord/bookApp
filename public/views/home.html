@@ -1,0 +1,28 @@
+<div>
+	<div layout="row" flex >
+	    <div layout="column" flex id="content" ng-repeat="book in books">
+	        <md-content layout="column" flex class="md-padding" >
+				<md-card>
+				 <img ng-src="{{book.img}}" class="md-card-image">
+				 <h2>{{book.title}}</h2>
+				 <p>
+				   {{book.description}}
+				 </p>
+				</md-card>
+	        </md-content>
+	    </div>
+	</div>
+	<div layout="row" flex>
+		<div layout="column" flex id="authors" ng-repeat="author in authors">
+	        <md-content layout="column" flex class="md-padding" >
+				<md-card>
+				 <img ng-src="img/washedout.png" class="md-card-image">
+				 <h2>{{author.lastname}}</h2> <small>{{author.firstname}}</small>
+				 <p>
+				     {{author.age}}
+				 </p>
+				</md-card>
+	        </md-content>						
+		</div>
+	</div>
+</div>

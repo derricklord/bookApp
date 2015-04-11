@@ -13,46 +13,28 @@
 		<link href="css/app.css" rel='stylesheet' type='text/css'>
 	</head>
 
-	<body layout="column" ng-controller="MainController as main" layout-fill>
+	<body layout="column"  layout-fill>
 			  <md-toolbar md-scroll-shrink md-theme-indigo>
 			    <div class="md-toolbar-tools">
 			      <h3>
 			        <span>Books</span>
 			      </h3>
+			      <ul>
+			        <li>
+			        	<a href="#/">Home</a>
+			        </li>			      
+			        <li>
+			        	<a href="#/new">New Book</a>
+			        </li>
+			      </ul>
 			    </div>
 			  </md-toolbar>
 
-		    <div >
-				<div layout="row" flex >
-				    <div layout="column" flex id="content" ng-repeat="book in books">
-				        <md-content layout="column" flex class="md-padding" >
-							<md-card>
-							 <img ng-src="{{book.img}}" class="md-card-image">
-							 <h2>{{book.title}}</h2>
-							 <p>
-							   {{book.description}}
-							 </p>
-							</md-card>
-				        </md-content>
-				    </div>
-				</div>
-				<div layout="row" flex>
-					<div layout="column" flex id="authors" ng-repeat="author in authors">
-				        <md-content layout="column" flex class="md-padding" >
-							<md-card>
-							 <img ng-src="img/washedout.png" class="md-card-image">
-							 <h2>{{author.lastname}}</h2> <small>{{author.firstname}}</small>
-							 <p>
-							     {{author.age}}
-							 </p>
-							</md-card>
-				        </md-content>						
-					</div>
-				</div>
-			</div>
+			<ng-view></ng-view>
 
 		    <!-- Angular Material Dependencies -->
-		    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>	
+		    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>			        
 		    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
 		    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
 
