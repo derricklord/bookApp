@@ -14,7 +14,8 @@ app.config(['$routeProvider', function($routeProvider){
 }]);
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http){
-
+	$scope.authors = [];
+	$scope.books = [];
 	$scope.getData = function(){
 		$http.get('http://localhost:3000/api/books').
 				success(function(data){
@@ -27,11 +28,9 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
 	}
 
 
-	$scope.delete = function(id){
-		//alert('Book Deleted: ' + id);
+	$scope.delete = function(id, $index){
 		$http.delete('http://localhost:3000/api/books/'+id);
-		$scope.getData();
-
+		$scope.books.splice($index, 1);
 	}
 
 	$scope.getData();
@@ -44,8 +43,8 @@ app.controller('NewController', ['$scope','$http', '$location', function($scope,
 		title: '',
 		author: '',
 		genre: '',
-		img: 'img/book2.jpg',
-		year: 0
+		img: 'img/washedout.png',
+		year: 2015
 	}
 
 	$scope.create = function(){
@@ -56,7 +55,7 @@ app.controller('NewController', ['$scope','$http', '$location', function($scope,
 						title: '',
 						author: '',
 						genre: '',
-						img: 'img/book2.jpg',
+						img: 'img/washedout.png',
 						year: 0
 					}
 

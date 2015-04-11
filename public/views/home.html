@@ -10,7 +10,7 @@
 				   <small>By: {{book.author}}</small>
 				   <!--<small>{{book._id}}</small>-->
 				 </p>
-				 <md-button class="md-raised md-warn" ng-click="delete(book._id)">Delete</md-button>
+				 <md-button class="md-raised md-warn" ng-click="delete(book._id, $index)">Delete</md-button>
 				</md-card>
 	        </md-content>
 	    </div>
