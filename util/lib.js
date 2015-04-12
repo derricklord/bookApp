@@ -5,14 +5,14 @@ module.exports =
       //console.log(req.headers.token);
       next();
     }else{
-      //next();
-
+      next();
+      /*
       if(!req.headers.token){
         res.send({'Message': 'Must specify a token'});
       }else{
         res.send({'Message': 'Wrong Token: Must be Authenticated'});
       } 
-
+      */
     }
   }
 }
